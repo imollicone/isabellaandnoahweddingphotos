@@ -1,7 +1,76 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Isabella and Noah's Wedding Photos!</title>
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Isabella and Noah's Wedding Photos</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #b76e79;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Isabella and Noah's Wedding Photos</h1>
+    <p>Celebrating love, joy, and beautiful memories</p>
+  </header>
+
+  <section class="gallery">
+    <img src="photo1.jpg" alt="Wedding Photo 1">
+    <img src="photo2.jpg" alt="Wedding Photo 2">
+    <img src="photo3.jpg" alt="Wedding Photo 3">
+    <img src="photo4.jpg" alt="Wedding Photo 4">
+    <img src="photo5.jpg" alt="Wedding Photo 5">
+    <!-- Add more <img> tags with your photo file names -->
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Isabella & Noah | All rights reserved</p>
+  </footer>
+
+</body>
 </html>
