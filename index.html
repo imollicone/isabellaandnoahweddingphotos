@@ -5,47 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Isabella and Noah's Wedding Photos</title>
   <style>
+    :root {
+      --main-color: #4ca3af;
+      --sidebar-width: 160px;
+    }
+
     body {
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      display: flex;
       background-color: #f9f9f9;
+      display: flex;
     }
 
-    /* Sidebar Styles */
+    /* Sidebar */
     .sidebar {
-      width: 220px;
-      background-color: #fff;
+      width: var(--sidebar-width);
+      background-color: var(--main-color);
       height: 100vh;
       position: fixed;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      padding-top: 2rem;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      transition: transform 0.3s ease;
+      color: #fff;
+      z-index: 2;
+    }
+
+    .sidebar.collapsed {
+      transform: translateX(-100%);
     }
 
     .sidebar h2 {
       text-align: center;
-      color: #b76e79;
-      margin-bottom: 2rem;
+      color: #fff;
+      margin: 1.5rem 0;
+      font-size: 1.2rem;
     }
 
     .sidebar a {
       display: block;
-      padding: 1rem 2rem;
-      color: #333;
+      padding: 1rem;
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s;
     }
 
     .sidebar a:hover {
-      background-color: #f0f0f0;
+      background-color: #3a8892;
     }
 
-    /* Main Content */
+    /* Toggle Button */
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background-color: var(--main-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 3;
+      display: none;
+    }
+
+    /* Main content */
     .main {
-      margin-left: 220px;
+      margin-left: var(--sidebar-width);
       padding: 2rem;
       flex-grow: 1;
+      transition: margin-left 0.3s ease;
+    }
+
+    .sidebar.collapsed ~ .main {
+      margin-left: 0;
     }
 
     header {
@@ -54,7 +88,7 @@
     }
 
     header h1 {
-      color: #b76e79;
+      color: var(--main-color);
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
@@ -87,12 +121,31 @@
       border-top: 1px solid #ddd;
       margin-top: 3rem;
     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .toggle-btn {
+        display: block;
+      }
+
+      .sidebar {
+        position: fixed;
+        height: 100%;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Sidebar Navigation -->
-  <nav class="sidebar">
+  <!-- Toggle Button -->
+  <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
     <h2>Menu</h2>
     <a href="#main">Main Page</a>
     <a href="#tables">Tables</a>
@@ -106,19 +159,18 @@
     </header>
 
     <section class="gallery">
-      <img src="Bella&NoahWeddingM-178.jpg" alt="Wedding Photo 1">
+      <img src="photo1.jpg" alt="Wedding Photo 1">
       <img src="photo2.jpg" alt="Wedding Photo 2">
       <img src="photo3.jpg" alt="Wedding Photo 3">
       <img src="photo4.jpg" alt="Wedding Photo 4">
       <img src="photo5.jpg" alt="Wedding Photo 5">
     </section>
 
-    <!-- Tables Section -->
     <section id="tables">
       <h2>Reception Table List</h2>
       <p>Here's where guests are seated for the reception:</p>
-      <table border="1" cellpadding="10" cellspacing="0" style="background-color: #fff; border-collapse: collapse;">
-        <thead style="background-color: #f0f0f0;">
+      <table border="1" cellpadding="10" cellspacing="0" style="background-color: #fff; border-collapse: collapse; width: 100%;">
+        <thead style="background-color: #e3f5f7;">
           <tr>
             <th>Table #</th>
             <th>Guests</th>
@@ -142,6 +194,13 @@
       <p>&copy; 2025 Isabella & Noah | All rights reserved</p>
     </footer>
   </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('collapsed');
+    }
+  </script>
 
 </body>
 </html>
