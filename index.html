@@ -6,30 +6,63 @@
   <title>Isabella and Noah's Wedding Photos</title>
   <style>
     body {
-      font-family: 'Helvetica Neue', sans-serif;
       margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      display: flex;
       background-color: #f9f9f9;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 220px;
+      background-color: #fff;
+      height: 100vh;
+      position: fixed;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding-top: 2rem;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      color: #b76e79;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 1rem 2rem;
       color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Main Content */
+    .main {
+      margin-left: 220px;
+      padding: 2rem;
+      flex-grow: 1;
     }
 
     header {
-      background-color: #fff;
-      padding: 2rem;
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
       color: #b76e79;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
-      padding: 2rem;
     }
 
     .gallery img {
@@ -43,34 +76,72 @@
       transform: scale(1.03);
     }
 
+    section {
+      margin-top: 3rem;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
       background-color: #fff;
       border-top: 1px solid #ddd;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Isabella and Noah's Wedding Photos</h1>
-    <p>Celebrating love, joy, and beautiful memories</p>
-  </header>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+    <h2>Menu</h2>
+    <a href="#main">Main Page</a>
+    <a href="#tables">Tables</a>
+  </nav>
 
-  <section class="gallery">
-    <img src="Bella&NoahWeddingM-178.jpg" alt="Wedding Photo 1">
-   . <img src="photo2.jpg" alt="Wedding Photo 2">
-    .<img src="photo3.jpg" alt="Wedding Photo 3">
-    .<img src="photo4.jpg" alt="Wedding Photo 4">
-    .<img src="photo5.jpg" alt="Wedding Photo 5">
-    <!-- Add more <img> tags with your photo file names -->
-  </section>
+  <!-- Main Content -->
+  <div class="main">
+    <header id="main">
+      <h1>Isabella and Noah's Wedding Photos</h1>
+      <p>Celebrating love, joy, and beautiful memories</p>
+    </header>
 
-  <footer>
-    <p>&copy; 2025 Isabella & Noah | All rights reserved</p>
-  </footer>
+    <section class="gallery">
+      <img src="Bella&NoahWeddingM-178.jpg" alt="Wedding Photo 1">
+      <img src="photo2.jpg" alt="Wedding Photo 2">
+      <img src="photo3.jpg" alt="Wedding Photo 3">
+      <img src="photo4.jpg" alt="Wedding Photo 4">
+      <img src="photo5.jpg" alt="Wedding Photo 5">
+    </section>
+
+    <!-- Tables Section -->
+    <section id="tables">
+      <h2>Reception Table List</h2>
+      <p>Here's where guests are seated for the reception:</p>
+      <table border="1" cellpadding="10" cellspacing="0" style="background-color: #fff; border-collapse: collapse;">
+        <thead style="background-color: #f0f0f0;">
+          <tr>
+            <th>Table #</th>
+            <th>Guests</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Emily, Jack, Sarah, Ben</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Michael, Grace, Olivia, Liam</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Isabella & Noah | All rights reserved</p>
+    </footer>
+  </div>
 
 </body>
 </html>
