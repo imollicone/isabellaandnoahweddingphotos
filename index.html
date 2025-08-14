@@ -148,6 +148,7 @@
   <nav class="sidebar" id="sidebar">
     <h2>Menu</h2>
     <a href="#main">Main Page</a>
+    <a href="#funny">Funny Photos</a>
     <a href="#tables">Tables</a>
   </nav>
 
@@ -158,14 +159,19 @@
       <p>Celebrating love, joy, and beautiful memories</p>
     </header>
 
-    <section class="gallery">
-      <img src="Bella&NoahWeddingM-178.jpg" alt="Wedding Photo 1">
-      <img src="Bella&NoahWeddingM-180.jpg" alt="Wedding Photo 2">
-      <img src="Bella&NoahWeddingM-941.jpg" alt="Wedding Photo 3">
-      <img src="Bella&NoahWeddingM-978.jpg" alt="Wedding Photo 4">
-      <img src="Bella&NoahWeddingH-75.jpg" alt="Wedding Photo 5">
+    <!-- Main Gallery -->
+    <section>
+      <h2>Main Wedding Photos</h2>
+      <div class="gallery" id="mainGallery"></div>
     </section>
 
+    <!-- Funny Photos -->
+    <section id="funny">
+      <h2>Funny Photos</h2>
+      <div class="gallery" id="funnyGallery"></div>
+    </section>
+
+    <!-- Tables Section -->
     <section id="tables">
       <h2>Reception Table List</h2>
       <p>Here's where guests are seated for the reception:</p>
@@ -197,9 +203,92 @@
 
   <script>
     function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('collapsed');
+      document.getElementById('sidebar').classList.toggle('collapsed');
     }
+
+    // Photo lists
+    const mainPhotos = [
+      "photo1.jpg",
+      "photo2.jpg",
+      "photo3.jpg",
+      "photo4.jpg",
+      "photo5.jpg"
+      // Add more filenames here
+    ];
+
+    const funnyPhotos = [
+      "funny1.jpg",
+      "funny2.jpg",
+      "funny3.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      "Bella&NoahWeddingH-165.jpg",
+      // Add more filenames here
+    ];
+
+    const reception = [
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      "DSC_0001",
+      
+      // Add more filenames here
+    ];
+
+    // Function to load photos into a gallery
+    function loadGallery(photos, galleryId) {
+      const gallery = document.getElementById(galleryId);
+      photos.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "Wedding Photo";
+        gallery.appendChild(img);
+      });
+    }
+
+    // Load both galleries
+    loadGallery(mainPhotos, "mainGallery");
+    loadGallery(reception, "receptionGallery");
+    loadGallery(funnyPhotos, "funnyGallery");
   </script>
 
 </body>
