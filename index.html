@@ -252,6 +252,38 @@
       const sidebar = document.getElementById('sidebar');
       sidebar.classList.toggle('collapsed');
     }
+
+        // Lightbox functionality
+    const images = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('show');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('show');
+      lightboxImg.src = "";
+    }
+
+    // Close on outside click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") {
+        closeLightbox();
+      }
+  
+    });
   </script>
 
 </body>
