@@ -177,20 +177,27 @@
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      .toggle-btn {
-        display: block;
-      }
+  /* Responsive */
+@media (max-width: 768px) {
+  .toggle-btn {
+    display: block;
+  }
 
-      .sidebar {
-        position: fixed;
-        height: 100%;
-      }
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    transform: translateX(-100%); /* collapsed by default */
+  }
 
-      .main {
-        margin-left: 0;
-      }
-    }
+  .sidebar.collapsed {
+    transform: translateX(0); /* open when toggled */
+  }
+
+  .main {
+    margin-left: 0;
+  }
+}
+
   </style>
 </head>
 <body>
