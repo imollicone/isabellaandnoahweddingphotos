@@ -54,6 +54,10 @@
       background-color: #3a8892;
     }
 
+    html {
+  scroll-behavior: smooth;
+}
+
     /* Toggle Button */
     .toggle-btn {
       position: fixed;
@@ -110,6 +114,13 @@
     .gallery img:hover {
       transform: scale(1.03);
     }
+
+    .gallery h2 {
+  grid-column: 1 / -1; /* makes heading span full row */
+  color: var(--main-color);
+  margin: 1rem 0;
+}
+
 
     section {
       margin-top: 3rem;
@@ -210,9 +221,9 @@
     <h2>Menu</h2>
     <a href="#main">Main Page</a>
     <a href="#tables">Tables</a>
-    <a href="#Intro">Ceremony</a>
-<a href="#funny">Reception</a>
-<a href="#reception">Funny Photos</a>
+    <a href="#intro">Intro</a>
+    <a href="#funny">Funny</a>
+    <a href="#reception">Reception</a>
   </nav>
 
   <!-- Main Content -->
@@ -223,7 +234,8 @@
     </header>
 
 
-   <section id="Intro" class="gallery">
+   <section id="intro" class="gallery">
+     <h2>Intro</h2>
       <img src="Bella&NoahWeddingH-75.jpg" alt="Wedding Photo 1">
       <img src="Bella&NoahWeddingM-178.jpg" alt="Wedding Photo 2">
       <img src="Bella&NoahWeddingM-180.jpg" alt="Wedding Photo 3">
@@ -231,7 +243,9 @@
       <img src="Bella&NoahWeddingM-978.jpg" alt="Wedding Photo 5">
       <img src="Bella&NoahWeddingH-165.jpg" alt="Wedding Photo 1">
       </section>
-     <section id="Funny" class="gallery">
+    
+     <section id="funny" class="gallery">
+       <h2>Funny</h2>
       <img src="DSC_0001.jpeg" alt="Wedding Photo 2">
       <img src="DSC_0047.jpeg" alt="Wedding Photo 3">
       <img src="DSC_0053.jpeg" alt="Wedding Photo 4">
@@ -249,7 +263,10 @@
       <img src="DSC_0107.jpeg" alt="Wedding Photo 1">
       <img src="DSC_0114.jpeg" alt="Wedding Photo 2">
       <img src="DSC_0117.jpeg" alt="Wedding Photo 3">
-      <section id="Reception" class="gallery">
+       </section>
+       
+      <section id="reception" class="gallery">
+        <h2>Reception</h2>
       <img src="DSC_0121.jpeg" alt="Wedding Photo 4">
       <img src="DSC_0122.jpeg" alt="Wedding Photo 5">
       <img src="DSC_0129.jpeg" alt="Wedding Photo 1">
