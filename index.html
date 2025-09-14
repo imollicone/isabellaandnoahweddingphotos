@@ -123,39 +123,57 @@
       margin-top: 3rem;
     }
 
-    /* Lightbox styles */
+    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
       z-index: 1000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #000;
     }
 
     .lightbox.show {
       display: flex;
     }
 
-    .lightbox .close {
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+
+    .lightbox .close, 
+    .lightbox .prev, 
+    .lightbox .next {
       position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: white;
+      background: rgba(0,0,0,0.4);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .lightbox .close {
       top: 20px;
       right: 30px;
-      font-size: 40px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+      transform: none;
+      font-size: 2.5rem;
+    }
+
+    .lightbox .prev {
+      left: 30px;
+    }
+
+    .lightbox .next {
+      right: 30px;
     }
 
     /* Responsive */
@@ -254,15 +272,8 @@
       <img src="CSC_0359.JPG" alt="Wedding Photo 5">
     </section>
 
-    <section class="gallery">
-      <!-- your <img> list here -->
-      <img src="Bella&NoahWeddingH-75.jpg" alt="Wedding Photo 1">
-      <img src="Bella&NoahWeddingH-178.jpg" alt="Wedding Photo 2">
-      <img src="Bella&NoahWeddingH-180.jpg" alt="Wedding Photo 3">
-      <!-- ... the rest of your images ... -->
-    </section>
 
-    <section id="tables">
+   <section id="tables">
       <h2>Reception Table List</h2>
       <p>Here's where guests are seated for the reception:</p>
       <table border="1" cellpadding="10" cellspacing="0" style="background-color: #fff; border-collapse: collapse; width: 100%;">
@@ -293,45 +304,58 @@
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="Large Photo">
+    <span class="prev" onclick="changePhoto(-1)">&#10094;</span>
+    <img id="lightbox-img" src="">
+    <span class="next" onclick="changePhoto(1)">&#10095;</span>
   </div>
 
   <script>
     function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('collapsed');
+      document.getElementById('sidebar').classList.toggle('collapsed');
     }
 
-    // Lightbox functionality
     const images = document.querySelectorAll('.gallery img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    let currentIndex = 0;
 
-    images.forEach(img => {
+    images.forEach((img, index) => {
       img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('show');
+        currentIndex = index;
+        showPhoto();
       });
     });
+
+    function showPhoto() {
+      lightboxImg.src = images[currentIndex].src;
+      lightbox.classList.add('show');
+    }
 
     function closeLightbox() {
       lightbox.classList.remove('show');
       lightboxImg.src = "";
     }
 
+    function changePhoto(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      if (currentIndex >= images.length) currentIndex = 0;
+      showPhoto();
+    }
+
     // Close on outside click
     lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
+      if (e.target === lightbox) closeLightbox();
     });
 
-    // Close on ESC key
+    // Close on ESC / navigate with arrows
     document.addEventListener('keydown', (e) => {
-      if (e.key === "Escape") {
-        closeLightbox();
-      }
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") changePhoto(1);
+      if (e.key === "ArrowLeft") changePhoto(-1);
     });
   </script>
+
 </body>
 </html>
+
