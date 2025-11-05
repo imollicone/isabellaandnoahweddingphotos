@@ -253,7 +253,10 @@
   <nav class="sidebar" id="sidebar">
     <h2>Menu</h2>
     <a href="#main">Main Page</a>
-    <a href="#photographers">Photos</a>
+    <a href="#photographers">Tables</a>
+    <a href="#intro">Intro</a>
+    <a href="#funny">Funny</a>
+    <a href="#reception">Reception</a>
   </nav>
 
   <!-- Main Content -->
@@ -264,8 +267,10 @@
     </header>
 
 
-   <section id="photos" class="gallery">
-     <h2>Photos</h2>
+   <section id="intro" class="gallery">
+     <h2>Intro</h2>
+
+
       <img src="Bella&NoahWeddingH-75.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-178.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-180.jpg" alt="Wedding Photo" loading="lazy">
@@ -292,12 +297,11 @@
       <img src="Bella&NoahWeddingM-1024.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM.jpg" alt="Wedding Photo" loading="lazy">
 
-       </section>
-
-       <div> class="gallery" data-section="Cocktail Hour">
-      <!-- Cocktail Hour & Guests --> 
-
-      <img src="Bella&NoahWeddingH-192.jpg" alt="Wedding Photo" loading="lazy">
+      </section>
+    
+     <section id="funny" class="gallery">
+       <h2>Funny</h2>
+    <img src="Bella&NoahWeddingH-192.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-437.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-443.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-444.jpg" alt="Wedding Photo" loading="lazy">
@@ -344,10 +348,10 @@
       <img src="DSC_0185.jpeg" alt="Wedding Photo" loading="lazy">
       <img src="DSC_0186.jpeg" alt="Wedding Photo" loading="lazy">
       <img src="DSC_0203.jpeg" alt="Wedding Photo" loading="lazy">
-      </div>
-
-      <!-- Intros --> 
-      <div> class="gallery" data-section="Intros">
+       </section>
+       
+      <section id="reception" class="gallery">
+        <h2>Reception</h2>
       <img src="Bella&NoahWeddingM-812.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-814.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-817.jpg" alt="Wedding Photo" loading="lazy">
@@ -392,10 +396,7 @@
       <img src="DSC_0121.jpeg" alt="Wedding Photo" loading="lazy">
       <img src="DSC_0122.jpeg" alt="Wedding Photo" loading="lazy">
       <img src="DSC_0129.jpeg" alt="Wedding Photo" loading="lazy">
-        </div>
 
-      <!-- Speeches --> 
-        <div> class="gallery" data-section="Speeches">
       <img src="Bella&NoahWeddingH-855.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-856.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-857.jpg" alt="Wedding Photo" loading="lazy">
@@ -429,9 +430,7 @@
       <img src="Bella&NoahWeddingM-893.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-894.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-895.jpg" alt="Wedding Photo" loading="lazy">
-          </div>
-      <!-- Dancing & Mom's Camera -->
-          <div> class="gallery" data-section="Dancing">
+
       <img src="Bella&NoahWeddingH-896.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-897.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-898.jpg" alt="Wedding Photo" loading="lazy">
@@ -486,9 +485,9 @@
       <img src="DSC_0994.jpeg" alt="Wedding Photo" loading="lazy">
       <img src="DSC_0997.jpeg" alt="Wedding Photo" loading="lazy">
       <img src="DSC_1000.jpeg" alt="Wedding Photo" loading="lazy">
-            </div>
-     <!-- Cake --> 
-            <div> class="gallery" data-section="Cake"
+
+
+
       <img src="Bella&NoahWeddingM-1053.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-1054.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-1055.jpg" alt="Wedding Photo" loading="lazy">
@@ -501,9 +500,8 @@
       <img src="Bella&NoahWeddingM-1062.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-1063.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-1064.jpg" alt="Wedding Photo" loading="lazy">
-              </div>
 
-              <div> class="gallery" data-section="More Dancing">
+
       <img src="Bella&NoahWeddingM-595.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-596.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-598.jpg" alt="Wedding Photo" loading="lazy">
@@ -675,10 +673,10 @@
       <img src="Bella&NoahWeddingM-1177.jpg" alt="Wedding Photo" loading="lazy">
       <img src="Bella&NoahWeddingM-1178.jpg" alt="Wedding Photo" loading="lazy">
 
-            </div>
-  
 
-    <section id="photographers">
+    </section>
+
+<section id="photographers">
   <h2>Photographers</h2>
 
   <div class="photographer">
@@ -793,16 +791,7 @@
         changePhoto(-1);
       }
     });
-
-    // Swipe support for mobile
-
-
   </script>
-  <script>
-function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('collapsed');
-}
-</script>
 
 </body>
 </html>
